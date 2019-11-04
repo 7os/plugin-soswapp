@@ -1,0 +1,110 @@
+/*! 7OS -Web plugin: https://github.com/7os/web-plugin
+  ! Requires 7os/web-theme available @ https://github.com/7os/web-theme
+*/
+
+@import "colors";
+@import "fn";
+
+#sos-alert-cover{
+  display: block;
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  background: rgba($grey,.6);
+  overflow: hidden;
+  z-index: 5000051;
+  opacity: 0;
+  #sos-alert{
+    position: relative;
+    height: auto;
+    min-width: 300px; max-width: 500px;
+    max-height: 80%; overflow: auto;
+    margin: 10% auto;
+    z-index: 5000051;
+    padding-bottom: 65px;
+    #sos-alert-content{
+      position: relative;
+      // left: 0; top: 0;
+      max-height: 80%;
+      overflow-y: auto;
+      padding: 20px;
+      width: 100%;
+    }
+    footer{
+      height: 60px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      // background-color: orange;
+      .btn, .sos-btn, .button, .sos-button{
+        margin: 0 !important;
+        float: right;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+#sos-loader{
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%;
+  height: 3.5px;
+  background-color: rgba($clouds,0.7);
+  z-index: 8000051;
+  @include drop-shadow(#000);
+  cursor: progress;
+  &.sos-loader-cover{
+    height: 100%;
+  }
+}
+#sos-loader-loaded{
+  height: 3.5px;
+  position: absolute;
+  left: 0; top: 0;
+  width: 0%;
+  @include animate-all;
+  background: $blue;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+  z-index: 5000051;
+}
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

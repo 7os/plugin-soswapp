@@ -1,0 +1,102 @@
+/*! 7OS -Web plugin: https://github.com/7os/web-plugin
+  ! Requires 7os/web-theme available @ https://github.com/7os/web-theme
+*/
+#sos-alert-cover {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(158, 158, 158, 0.6);
+  overflow: hidden;
+  z-index: 5000051;
+  opacity: 0; }
+  #sos-alert-cover #sos-alert {
+    position: relative;
+    height: auto;
+    min-width: 300px;
+    max-width: 500px;
+    max-height: 80%;
+    overflow: auto;
+    margin: 10% auto;
+    z-index: 5000051;
+    padding-bottom: 65px; }
+    #sos-alert-cover #sos-alert #sos-alert-content {
+      position: relative;
+      max-height: 80%;
+      overflow-y: auto;
+      padding: 20px;
+      width: 100%; }
+    #sos-alert-cover #sos-alert footer {
+      height: 60px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%; }
+      #sos-alert-cover #sos-alert footer .btn, #sos-alert-cover #sos-alert footer .sos-btn, #sos-alert-cover #sos-alert footer .button, #sos-alert-cover #sos-alert footer .sos-button {
+        margin: 0 !important;
+        float: right;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important; }
+
+#sos-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3.5px;
+  background-color: rgba(236, 240, 241, 0.7);
+  z-index: 8000051;
+  -webkit-box-shadow: 0 1.5px 1.1px -1px #000;
+  -moz-box-shadow: 0 1.5px 1.1px -1px #000;
+  box-shadow: 0 1.5px 1.1px -1px #000;
+  cursor: progress; }
+  #sos-loader.sos-loader-cover {
+    height: 100%; }
+
+#sos-loader-loaded {
+  height: 3.5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: #2196F3;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  z-index: 5000051; }
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+/*# sourceMappingURL=web-plugin.css.map */
