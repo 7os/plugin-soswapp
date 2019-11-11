@@ -1,6 +1,6 @@
-/*! 7OS -Web plugin: https://github.com/7os/web-plugin
-  ! Requires 7os/web-theme available @ https://github.com/7os/web-theme
-  ! Requires 7os/js-generic available @ https://github.com/7os/js-generic
+/*! 7OS -Web plugin: https://github.com/7os/plugin-soswapp
+  ! Requires 7os/theme-soswapp available @ https://github.com/7os/theme-soswapp
+  ! Requires 7os/js-generic-soswapp available @ https://github.com/7os/js-generic-soswapp
 */
 if (typeof sos == 'undefined') window.sos = {}; // Seven OS
 if ( typeof sos.config !== 'object' ) sos.config = {};

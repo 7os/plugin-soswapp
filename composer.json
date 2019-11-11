@@ -1,8 +1,8 @@
 {
-    "name": "7os/web-plugin",
+    "name": "7os/plugin-soswapp",
     "description": "7 OS Web - Plugin resource",
     "keywords": ["css", "javascript","7","seven","os","web","plugin"],
-    "homepage": "https://github.com/7os/web-plugin",
+    "homepage": "https://github.com/7os/plugin-soswapp",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-      "7os/jquery" : ">=0.1@stable",
-      "7os/web-theme" : ">=0.1@stable",
-      "7os/js-generic" : ">=0.1@stable"
+      "7os/jquery-soswapp" : ">=0.1@stable",
+      "7os/theme-soswapp" : ">=0.1@stable",
+      "7os/js-generic-soswapp" : ">=0.1@stable"
     },
     "require-dev": {},
     "autoload": {

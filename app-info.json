@@ -1,7 +1,7 @@
 {
-  "name" : "7os/web-plugin",
+  "name" : "7os/plugin-soswapp",
   "description" : "7 OS Web - Plugin",
-  "homepage" : "https://github.com/7os/web-plugin",
+  "homepage" : "https://github.com/7os/plugin-soswapp",
   "support" : {
     "email" : "dev@tymfrontiers.com",
     "website" : "https://tymfrontiers.com",

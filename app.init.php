@@ -1,8 +1,8 @@
 <?php
 // load up app settings
 $conf_path = \str_replace([
-  "/vendor/7os/web-plugin",
-  "/dev/7os/web-plugin",
+  "/vendor/7os/plugin-soswapp",
+  "/dev/7os/plugin-soswapp",
   "\\vendor\\7os\\web-plugin",
   "\\dev\\7os\\web-plugin",
 ],"",__DIR__);
