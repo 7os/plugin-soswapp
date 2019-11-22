@@ -61,6 +61,13 @@
     height: 100%;
   }
 }
+#sos-spinner{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  @include text-shadow(#000);
+  font-size: 1.8em;
+}
 #sos-loader-loaded{
   height: 3.5px;
   position: absolute;

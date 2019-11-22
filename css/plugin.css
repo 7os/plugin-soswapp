@@ -13,35 +13,40 @@
   background: rgba(158, 158, 158, 0.6);
   overflow: hidden;
   z-index: 5000051;
-  opacity: 0; }
-  #sos-alert-cover #sos-alert {
-    position: relative;
-    height: auto;
-    min-width: 300px;
-    max-width: 500px;
-    max-height: 80%;
-    overflow: auto;
-    margin: 10% auto;
-    z-index: 5000051;
-    padding-bottom: 65px; }
-    #sos-alert-cover #sos-alert #sos-alert-content {
-      position: relative;
-      max-height: 80%;
-      overflow-y: auto;
-      padding: 20px;
-      width: 100%; }
-    #sos-alert-cover #sos-alert footer {
-      height: 60px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%; }
-      #sos-alert-cover #sos-alert footer .btn, #sos-alert-cover #sos-alert footer .sos-btn, #sos-alert-cover #sos-alert footer .button, #sos-alert-cover #sos-alert footer .sos-button {
-        margin: 0 !important;
-        float: right;
-        -webkit-box-shadow: none !important;
-        -moz-box-shadow: none !important;
-        box-shadow: none !important; }
+  opacity: 0;
+}
+#sos-alert-cover #sos-alert {
+  position: relative;
+  height: auto;
+  min-width: 300px;
+  max-width: 500px;
+  max-height: 80%;
+  overflow: auto;
+  margin: 10% auto;
+  z-index: 5000051;
+  padding-bottom: 65px;
+}
+#sos-alert-cover #sos-alert #sos-alert-content {
+  position: relative;
+  max-height: 80%;
+  overflow-y: auto;
+  padding: 20px;
+  width: 100%;
+}
+#sos-alert-cover #sos-alert footer {
+  height: 60px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#sos-alert-cover #sos-alert footer .btn, #sos-alert-cover #sos-alert footer .sos-btn, #sos-alert-cover #sos-alert footer .button, #sos-alert-cover #sos-alert footer .sos-button {
+  margin: 0 !important;
+  float: right;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
 
 #sos-loader {
   position: fixed;
@@ -54,9 +59,21 @@
   -webkit-box-shadow: 0 1.5px 1.1px -1px #000;
   -moz-box-shadow: 0 1.5px 1.1px -1px #000;
   box-shadow: 0 1.5px 1.1px -1px #000;
-  cursor: progress; }
-  #sos-loader.sos-loader-cover {
-    height: 100%; }
+  cursor: progress;
+}
+#sos-loader.sos-loader-cover {
+  height: 100%;
+}
+
+#sos-spinner {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  -webkit-text-shadow: 0.5px 0.5px 1.5px #000;
+  -moz-text-shadow: 0.5px 0.5px 1.5px #000;
+  text-shadow: 0.5px 0.5px 1.5px #000;
+  font-size: 1.8em;
+}
 
 #sos-loader-loaded {
   height: 3.5px;
@@ -75,28 +92,41 @@
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
-  z-index: 5000051; }
+  z-index: 5000051;
+}
 
 @-webkit-keyframes Gradient {
   0% {
-    background-position: 0% 50%; }
+    background-position: 0% 50%;
+  }
   50% {
-    background-position: 100% 50%; }
+    background-position: 100% 50%;
+  }
   100% {
-    background-position: 0% 50%; } }
+    background-position: 0% 50%;
+  }
+}
 @-moz-keyframes Gradient {
   0% {
-    background-position: 0% 50%; }
+    background-position: 0% 50%;
+  }
   50% {
-    background-position: 100% 50%; }
+    background-position: 100% 50%;
+  }
   100% {
-    background-position: 0% 50%; } }
+    background-position: 0% 50%;
+  }
+}
 @keyframes Gradient {
   0% {
-    background-position: 0% 50%; }
+    background-position: 0% 50%;
+  }
   50% {
-    background-position: 100% 50%; }
+    background-position: 100% 50%;
+  }
   100% {
-    background-position: 0% 50%; } }
+    background-position: 0% 50%;
+  }
+}
 
-/*# sourceMappingURL=web-plugin.css.map */
+/*# sourceMappingURL=plugin.css.map */

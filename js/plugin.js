@@ -313,7 +313,7 @@ sos.loader = {
       pauseActivity = typeof pauseActivity == "boolean" ? pauseActivity : false;
       var outprint = '<div id="sos-loader"';
       if (pauseActivity) outprint += ' class="sos-loader-cover"';
-          outprint += '> <div id="sos-loader-loaded"></div>';
+          outprint += '> <div id="sos-spinner"> <i class="fas fa-spinner fa-spin"></i></div> <div id="sos-loader-loaded"></div>';
           outprint += '</div>';
       $('body').prepend(outprint);
     }
@@ -321,13 +321,17 @@ sos.loader = {
   progress : function (info) {
     sos.loader.init();
     var bar = $(document).find('#sos-loader-loaded');
+    var loaded = Math.round( ((info.loaded * 100) / info.total) );
     bar.css({
-      width : Math.round( ((info.loaded * 100) / info.total) ) + "%"
+      width : loaded + "%"
     });
+    if (loaded >= 100 ){
+      setTimeout(sos.loader.exit,1200);
+    }
 
   },
   exit : function () {
-    $(document).find("#sos-loader").fadeOut().remove();
+    $(document).find("#sos-loader").fadeOut('slow').remove();
   }
 };
 sos.form.validate = {

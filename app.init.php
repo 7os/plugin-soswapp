@@ -3,8 +3,8 @@
 $conf_path = \str_replace([
   "/vendor/7os/plugin-soswapp",
   "/dev/7os/plugin-soswapp",
-  "\\vendor\\7os\\web-plugin",
-  "\\dev\\7os\\web-plugin",
+  "\\vendor\\7os\\plugin-soswapp",
+  "\\dev\\7os\\plugin-soswapp",
 ],"",__DIR__);
 $conf_file = $conf_path . "/project-info.json";
 
