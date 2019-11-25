@@ -56,6 +56,7 @@ sos.alert = function(msg,opts){
       div += msg;
       div += "</div> <footer>";
       if( options.type !== 'progress' && options.exit !== false ){
+        if (options.exit === true) options.exit = "Close";
         if (typeof options.exit !== "boolean" || parseBool(options.exit) != false ) {
           if (in_array(options.exit,typeMsgs)) {
             div += '  <button type="button" class="btn '+btnColors[options.type]+'" onclick="removeAlert();">' + btnIcons[options.type] +typeMsgs[options.type] +'</button>'
@@ -239,16 +240,27 @@ sos.form = {
        //   }
        // },
       success  : function(data){
-        if(data.status !== undefined && (data.status == "0.0" || data.errors.length <= 0) ){
-          // console.log(data);
-          // $(form).trigger('reset');
-          if(resetForm)  $(form).trigger('reset');
-          sos.alert(data.message,{type:'success',tymout:18000});
-          if(typeof callback == "function") { callback(data); };
-        }else{
-          // console.log(data);
-          if (data.errors !== undefined && data.message !== undefined) {
-            var html = '<h3>'+data.message+'</h3>';
+        if (data.status == undefined || data.message == undefined || data.errors == undefined) {
+          var outprint = " <h4>Response detail</h4>";
+          if (typeof data == "object") {
+            outprint += JSON.stringify(data);
+          } else {
+            outprint += data;
+          }
+          sos.alert("<h3>[4.0]: Unknown response error.</h3> <div>" + outprint +"</div>",{type:'error',exit:true});
+        } else {
+          if (data.status == "0.0" || data.status == "00") {
+            if(resetForm)  $(form).trigger('reset');
+            sos.alert("<h3>[0.0]: Success!</h3> <div>" + data.message + "</div>",{type:'success',tymout:18000, exit:true});
+            if(typeof callback == "function") { callback(data); };
+          } else if (data.status == "0.1") { // No change(s) made
+            sos.alert("<h3>[0.1]: No change(s) made.</h3> <div>" + data.message + "</div>",{type:'message',tymout:15000, exit:true});
+          } else if (data.status == "0.2") { // No result(s) found
+            sos.alert("<h3>[0.2]: No result(s) found.</h3> <div>" + data.message + "</div>",{type:'message',tymout:15000, exit:true});
+          } else if (data.status == "0.3") { // Action required
+            sos.alert("<h3>[0.3]: Action required.</h3> <div>" + data.message + "</div>",{type:'info',tymout:15000, exit:true});
+          } else {
+            var html = '<h3> ['+data.status+']: '+data.message+'</h3>';
             html += '<strong>Errors:</strong> <ol>';
             for(i=0;i<data.errors.length;i++){  html += '<li>'+data.errors[i]+'</li>'; }
             html += '</ol>';
@@ -271,26 +283,14 @@ sos.form = {
                 html += '</ol>';
               }
             }
-            sos.alert(html,{type: 'error'});
-          } else {
-            var outprint = " <h3>Response detail</h3>";
-            if (typeof data == "object") {
-              outprint += JSON.stringify(data);
-            } else {
-              outprint += data;
-            }
-            sos.alert(' <h2>Error(s) encountered</h2> <div>'+outprint+'</div>',{type:'error'});
+            sos.alert(html,{type: 'error', exit:true});
           }
-          // console.log(data);
         }
       },
       error		:	function(xhr, textStatus, errorThrown){
-        //console.clear();
         var errorMessage = xhr.responseText;
-        // errorMessage = ' ('+errorMessage.substring(errorMessage.indexOf('<title>') + 500, errorMessage.indexOf('</title>'))+')';
-        // console.log(errorMessage);
-        var html = '<h3>Sorry, error occured</h3> ';
-        sos.alert(html+errorMessage,{type:'error'});
+        var html = '<h3>[Unknown]: Error(s)</h3> <div>' + errorMessage +'</div>';
+        sos.alert(html,{type:'error', exit:true});
       }
     }
 
