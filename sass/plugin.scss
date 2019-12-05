@@ -52,7 +52,7 @@
   position: fixed;
   left: 0; top: 0;
   width: 100%;
-  height: 3.5px;
+  height: 2.8px;
   background-color: rgba($clouds,0.7);
   z-index: 8000051;
   @include drop-shadow(#000);
@@ -63,13 +63,14 @@
 }
 #sos-spinner{
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 8px;
+  top: 8px;
+  color: white;
   @include text-shadow(#000);
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 #sos-loader-loaded{
-  height: 3.5px;
+  height: 2.8px;
   position: absolute;
   left: 0; top: 0;
   width: 0%;
