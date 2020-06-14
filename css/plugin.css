@@ -26,8 +26,10 @@
   margin: 10% auto;
   z-index: 5000051;
   padding-bottom: 65px;
+  font-family: "Open Sans", sans-serif !important;
 }
 #sos-alert-cover #sos-alert #sos-alert-content {
+  font-family: "Open Sans", sans-serif !important;
   position: relative;
   max-height: 80%;
   overflow-y: auto;
