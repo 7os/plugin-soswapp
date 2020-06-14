@@ -4,7 +4,6 @@
 
 @import "colors";
 @import "fn";
-
 #sos-alert-cover{
   display: block;
   position: fixed;
@@ -115,4 +114,194 @@
 	100% {
 		background-position: 0% 50%
 	}
+}
+
+#sos-frm-upldr-stat{
+  position: relative;
+  @include border-radius(8px);
+  border: solid 1px $silver;
+  background-color: rgba($clouds, 0.85);
+  margin: 12px 0;
+  @include animate-height;
+  ul.fl-lst{
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      position: relative;
+      border-bottom: solid 1px $silver;
+      padding: 12px 40px 10px 10px;
+      font-size: 0.95em;
+      overflow-x: hidden;
+      // white-space: nowrap;
+      color: $blue;
+      @include animate-all;
+      .fas{ font-size: 1.2em; }
+      .stat-uploadn, .stat-done, .stat-failed{ display: none; }
+      .stat-uploadn, .stat-done, .stat-failed, .stat-waitn, .fname, .ficon, .fsize{
+        z-index: 2;
+      }
+      .stat-uploadn, .stat-done, .stat-failed, .stat-waitn{
+        position: absolute;
+        top: 12px; right: 8px;
+        z-index: 10;
+        width: 30px; height: 30px;
+        padding: 4px;
+        text-align: center;
+        font-size: 1.3em;
+      }
+      .prgs{
+        position: absolute;
+        height: 100%;
+        left: 0; top: 0;
+        width: 0%;
+        background-color: rgba($green,0.2);
+        @include animate-width;
+        z-index: 0;
+      }
+      &.uploadn {
+        cursor: progress;
+        color: $green;
+        .prgs{
+          display: block;
+        }
+        .stat-uploadn{ display: inline-block; }
+        .stat-waitn{ display: none; }
+      }
+      &.done{
+        color: darken($green,15%);
+        .stat-done{ display: inline-block; }
+        .stat-waitn{ display: none; }
+      }
+      &.done:first-child{
+        -webkit-border-radius: 8px 8px 0 0 !important;
+        -ms-border-radius: 8px 8px 0 0 !important;
+        -moz-border-radius: 8px 8px 0 0 !important;
+        border-radius: 8px 8px 0 0 !important;
+      }
+      &.done:last-child{
+        -webkit-border-radius: 0 0 8px 8px !important;
+        -ms-border-radius: 0 0 8px 8px !important;
+        -moz-border-radius: 0 0 8px 8px !important;
+        border-radius: 0 0 8px 8px !important;
+      }
+      &.done .prgs{
+        background-color: rgba($green,0.2) !important;
+      }
+      &.failed{
+        color: $red;
+        .stat-failed{ display: inline-block; }
+        .stat-waitn, .prgs{ display: none; }
+      }
+      &:hover{ background: rgba(#000, 0.05);}
+      .ficon{
+        margin: -12px 5px;
+        &::before{
+          display: inline;
+          font-weight: bold;
+          display: inline-block;
+          border: solid 2px $grey;
+          width: 30px; height: 30px;
+          padding: 4.5px 3px;
+          text-align: center;
+          font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro";
+          @include border-radius(100%);
+          background-color: $silver;
+          font-size: 1.2em;
+        }
+        &.unknown::before{
+          content: '\f15b';
+          color: black;
+        }
+        &.image::before{
+          content: '\f1c5';
+          color: $pink;
+          border-color: $pink;
+        }
+        &.audio::before{
+          content: '\f1c7';
+          color: $pumpkin;
+          border-color: $pumpkin;
+        }
+        &.video::before{
+          content: '\f1c8';
+          color: $purple;
+          border-color: $purple;
+        }
+        &.document::before{
+          content: '\f15c';
+          color: $indigo;
+          border-color: $indigo;
+        }
+        &.archive::before{
+          content: '\f1c6';
+          color: $midnight-blue;
+          border-color: $midnight-blue;
+        }
+        &.script::before{
+          content: '\f1c9';
+          color: $deep-purple;
+          border-color: $deep-purple;
+        }
+        &.graphic::before{
+          content: '\f53f';
+          color: $lime;
+          color: $lime;
+        }
+      }
+      .fsize{
+        display: inline-block;
+        padding: 5px;
+        @include border-radius(5px);
+        border: solid 1px $amber;
+        color: $red;
+        margin-left: 15px;
+      }
+      .frmv{
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        padding: 5px;
+        margin: 0 !important;
+        display: none;
+        width: 30px;
+        height: 30px;
+        border: solid 2px darken($red, 12%) !important;
+        font-size: 0.9em;
+        @include no-shadow;
+        @include border-radius(12px);
+        z-index: 300;
+        @include animate-all;
+        opacity: 0;
+      }
+      &:first-child{
+        -webkit-border-radius: 8px 8px 0 0;
+      	-ms-border-radius: 8px 8px 0 0;
+      	-moz-border-radius: 8px 8px 0 0;
+      	border-radius: 8px 8px 0 0;
+        .prgs{
+          -webkit-border-radius: 8px 0 0 0;
+        	-ms-border-radius: 8px 0 0 0;
+        	-moz-border-radius: 8px 0 0 0;
+        	border-radius: 8px 0 0 0;
+        }
+      }
+      &:last-child{
+        -webkit-border-radius: 0 0 8px 8px;
+      	-ms-border-radius: 0 0 8px 8px;
+      	-moz-border-radius: 0 0 8px 8px;
+      	border-radius: 0 0 8px 8px;
+        border: none;
+        .prgs{
+          -webkit-border-radius: 0 0 0 8px;
+        	-ms-border-radius: 0 0 0 8px;
+        	-moz-border-radius: 0 0 0 8px;
+        	border-radius: 0 0 0 8px;
+        }
+      }
+      &:hover .frmv{ display: inline-block; opacity: 1; }
+      &.failed:hover .frmv, &.failed .frmv, &.done:hover .frmv, &.done .frmv{ display: none; opacity: 0; }
+    }
+  }
 }
